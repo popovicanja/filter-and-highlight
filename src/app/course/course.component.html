@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="header">
+    <span class="title">{{data?.title}}</span>
+  </div>
+  <div class="content" [formGroup]="form">
+    <mat-form-field [floatLabel]="'always'">
+      <mat-label>Course Title</mat-label>
+      <input matInput formControlName="title">
+      <mat-error *ngIf="title.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field [floatLabel]="'always'">
+      <mat-label>Course Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+      <mat-error *ngIf="description.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="actions">
+    <div (click)="close.emit()" class="cancel-label">{{data?.cancelLabel}}</div>
+    <div (click)="onSave()" class="confirm-label">{{data?.saveLabel}}</div>
+  </div>
+</div>

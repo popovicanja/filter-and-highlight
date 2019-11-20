@@ -1,0 +1,47 @@
+.header {
+  padding-bottom: 24px;
+  .title {
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    font-weight: 500;
+    color: #6a6565;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+
+  mat-form-field:first-child {
+    margin-bottom: 8px;
+  }
+}
+.actions {
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .action-label {
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 13px;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  .confirm-label {
+    @extend .action-label;
+    color: #ca89e9;
+    &:hover {
+      background: rgba(202, 137, 233, 0.25);
+    }
+  }
+  .cancel-label {
+    @extend .action-label;
+    margin-right: 16px;
+    color: dimgray;
+    &:hover {
+      background: rgba(173, 173, 173, 0.36);
+    }
+  }
+}

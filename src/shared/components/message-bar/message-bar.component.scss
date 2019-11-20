@@ -1,0 +1,32 @@
+::ng-deep snack-bar-container.error {
+  background-color: red;
+}
+
+::ng-deep snack-bar-container.warning {
+  background-color: orange;
+}
+
+::ng-deep snack-bar-container.info {
+  background-color: grey;
+}
+
+$size: 32px;
+
+.message-bar {
+  white-space: pre-wrap;
+  display: flex;
+  line-height: $size;
+  color: white;
+  font-size: 14px;
+}
+
+@mixin mat-icon-size($size: $size) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  margin-right: 10px;
+}
+
+.icon {
+  @include mat-icon-size($size);
+}

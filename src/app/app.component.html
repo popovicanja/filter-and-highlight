@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="header">
+    <div class="title">Filter and Highlight app</div>
+    <div class="add"
+         (click)="openCourseModal()">
+      <div class="plus-icon">+</div>
+      <span class="text">Add new Course</span>
+    </div>
+  </div>
+  <div class="content">
+
+    <div class="search-container">
+      <app-search (search)="filterItems($event)"></app-search>
+    </div>
+    <div class="list">
+      <div *ngFor="let course of filteredCourses; let i = index"
+           class="card">
+        <div class="info">
+          <div class="title" [innerHTML]="course.title | highlight: searchTerm"></div>
+          <div class="description" [innerHTML]="course.description | highlight: searchTerm"></div>
+        </div>
+        <div class="actions">
+          <i class="material-icons edit" (click)="openCourseModal(course, i)">create</i>
+          <i class="material-icons delete" (click)="deleteCourse(i)">delete</i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
